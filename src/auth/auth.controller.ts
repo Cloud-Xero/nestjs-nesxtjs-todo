@@ -44,12 +44,13 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @Post('logout')
   logout(@Req() req: Request, @Res({ passthrough: true }) res: Response): Msg {
-    res.cookie('access_token', '', {
-      httpOnly: true,
-      secure: false,
-      sameSite: 'none',
-      path: '/',
-    });
+    // res.cookie('access_token', '', {
+    //   httpOnly: true,
+    //   secure: false,
+    //   sameSite: 'none',
+    //   path: '/',
+    // });  // こちらでも OK
+    res.clearCookie('access_token');
 
     return {
       message: 'ok',
