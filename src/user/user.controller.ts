@@ -8,7 +8,10 @@ import { User } from '@prisma/client';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-export class UserController {}
+  @Get()
+  getLoginUser(@Req() req: Request): Omit<User, 'hashPassword'> {
+    return req.user;
+  }
 
   @Patch()
   updateUser(
