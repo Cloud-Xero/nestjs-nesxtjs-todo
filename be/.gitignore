@@ -1,6 +1,11 @@
 # compiled output
 /dist
+/fe/dist
+/be/dist
 /node_modules
+/fe/node_modules
+/be/node_modules
+
 
 # Logs
 logs
@@ -36,3 +41,5 @@ lerna-debug.log*
 
 # env
 .env
+/fe/.env
+/be/.env
